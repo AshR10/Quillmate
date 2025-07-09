@@ -14,7 +14,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-!frontend/quillmate-reimagined-ui/src/lib/
+!frontend/quillmate-reimagined-ui/src/lib
 lib/
 lib64/
 parts/
