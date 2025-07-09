@@ -27,7 +27,7 @@ export function QuillMate() {
   const generate = async (mode: string, genre: string, tone: string, inputText: string) => {
     try {
       const data = { mode, input_text: inputText, genre, tone };
-      const response = await fetch("http://localhost:8000/generate/", {
+      const response = await fetch("https://quillmate-back.onrender.com/generate/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -42,7 +42,7 @@ export function QuillMate() {
   const expand = async (inputText: string, mode: string) => {
     try {
       const data = { mode, input_text: inputText };
-      const response = await fetch("http://localhost:8000/expand/", {
+      const response = await fetch("https://quillmate-back.onrender.com/expand/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -57,7 +57,7 @@ export function QuillMate() {
   const analyze = async (inputText: string) => {
     try {
       const data = { input_text: inputText, mode: "", genre: "", tone: "" };
-      const response = await fetch("http://localhost:8000/analyze/", {
+      const response = await fetch("https://quillmate-back.onrender.com/analyze/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -72,7 +72,7 @@ export function QuillMate() {
   const enhance = async (inputText: string) => {
     try {
       const data = { input_text: inputText, mode: "", genre: "", tone: "", style: "" };
-      const response = await fetch("http://localhost:8000/enhance/", {
+      const response = await fetch("https://quillmate-back.onrender.com/enhance/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -86,7 +86,7 @@ export function QuillMate() {
 
   const exportToPDF = async (text: string) => {
   try {
-    const response = await fetch("http://localhost:8000/export-pdf/", {
+    const response = await fetch("https://quillmate-back.onrender.com/export-pdf/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -488,7 +488,7 @@ function StyleMimicry({ onExport }: {
   const mimic = async (inputText: string) => {
     try {
       const data = { input_text: inputText, mode: "", genre: "", tone: "", style: "" };
-      const response = await fetch("http://localhost:8000/mimic/", {
+      const response = await fetch("https://quillmate-back.onrender.com/mimic/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
@@ -523,7 +523,7 @@ function StyleMimicry({ onExport }: {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const response = await fetch("http://localhost:8000/upload/", {
+      const response = await fetch("https://quillmate-back.onrender.com/upload/", {
         method: "POST",
         body: formData,
       });
@@ -660,7 +660,7 @@ function StyleEnhancer({ onEnhance, onExport }: {
     const formData = new FormData();
     formData.append("file", file);
     try {
-      const response = await fetch("http://localhost:8000/upload/", {
+      const response = await fetch("https://quillmate-back.onrender.com/upload/", {
         method: "POST",
         body: formData,
       });
